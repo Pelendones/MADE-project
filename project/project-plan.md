@@ -12,7 +12,7 @@ MADE Project correlation between weather and bicycle accidents.
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
-Understanding the influences in bicycle accidents can us help identifiying the possible dangers and correlations. 
+Understanding the influences in bicycle accidents can us help identifying the possible dangers and correlations. 
 The data from the Datasources only describe the condition of the road and not the current weather. 
 I want to combine this data with a dataset of current weather in the hour of the bicycle accident and see if there is a correlation with the severity.
 I also want to see if there is a link with bicycle accidents and the condition of the weather. 
@@ -35,4 +35,4 @@ I also want to see if there is a link with bicycle accidents and the condition o
 * URI: https://unfallatlas.statistikportal.de/
 * License: dl-de/by-2-0 https://www.govdata.de/dl-de/by-2-0
 
-GOVDATA provides a "Unfallatlas Deutschland" which can be transalted to "Accident Atlas Germany". It provides a good dataset of accidents with personal injuries on the streets in Germany.
+GOVDATA provides a "Unfallatlas Deutschland" which can be translated to "Accident Atlas Germany". It provides a good dataset of accidents with personal injuries on the streets in Germany.
