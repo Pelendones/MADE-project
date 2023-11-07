@@ -36,3 +36,10 @@ I also want to see if there is a link with bicycle accidents and the condition o
 * License: dl-de/by-2-0 https://www.govdata.de/dl-de/by-2-0
 
 GOVDATA provides a "Unfallatlas Deutschland" which can be translated to "Accident Atlas Germany". It provides a good dataset of accidents with personal injuries on the streets in Germany.
+
+### Datasource2 Weatherdata:
+* Metadata URL: In search of open data weather data
+* Data URL: 
+* Data Type:
+* URI: 
+* License: 
