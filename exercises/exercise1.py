@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('rhein-kreis-neuss-flughafen-weltweit.csv', sep=';') 
 
 #Schreiben in eine sqlite Datei mit dem Namen airports.sqlite und dem Tabellennamen airports und manuelles setzen der Datentypen BIGINT, TEXT or FLOAT
-df.to_sql('airports','sqlite:///airports.sqlite',if_exists='replace', index=False, dtype={
+df.to_sql('airports','airports.sqlite',if_exists='replace', index=False, dtype={
         'column_1':'INT',
         'column_2': 'TEXT',
         'column_3': 'TEXT',
