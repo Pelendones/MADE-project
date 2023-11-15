@@ -44,4 +44,4 @@ GOVDATA provides a "Unfallatlas Deutschland" which can be translated to "Acciden
 * Data Type: Zip File as a TXT
 * License: https://opendata.dwd.de/climate_environment/CDC/Nutzungsbedingungen_German.pdf
 
-The German Wetterdienst is providing the amount of historicall rainfall in hourly measure points. The study will look at the data of München, but can be expanded to other cities, too.
+The German Wetterdienst is providing the amount of historical rainfall in hourly measure points. The study will look at the data of München, but can be expanded to other cities, too.
