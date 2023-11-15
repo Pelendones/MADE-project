@@ -37,9 +37,11 @@ I also want to see if there is a link with bicycle accidents and the condition o
 
 GOVDATA provides a "Unfallatlas Deutschland" which can be translated to "Accident Atlas Germany". It provides a good dataset of accidents with personal injuries on the streets in Germany.
 
-### Datasource2 Weatherdata:
-* Metadata URL: In search of open data weather data
-* Data URL: 
-* Data Type:
-* URI: 
-* License: 
+### Datasource2 Weatherdata Deutscher Wetterdienst:
+* Metadata URL: https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/precipitation/historical/stundenwerte_RR_03379_19970707_20221231_hist.zip
+  * Inside the ZIP File
+* Data URL: https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/precipitation/historical/stundenwerte_RR_03379_19970707_20221231_hist.zip
+* Data Type: Zip File as a TXT
+* License: https://opendata.dwd.de/climate_environment/CDC/Nutzungsbedingungen_German.pdf
+
+The German Wetterdienst is providing the amount of historicall rainfall in hourly measure points. The study will look at the data of München, but can be expanded to other cities, too.
