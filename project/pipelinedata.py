@@ -92,13 +92,13 @@ def load_accident_data(year):
 
 def main(): 
     load_weather_data()
-    #load_accident_data(year='2016')
-    #load_accident_data(year='2017')
-    #load_accident_data(year='2018')
-    #load_accident_data(year='2019')
-    #load_accident_data(year='2020')
-    #load_accident_data(year='2021')
-    #load_accident_data(year='2022') 
+    load_accident_data(year='2016')
+    load_accident_data(year='2017')
+    load_accident_data(year='2018')
+    load_accident_data(year='2019')
+    load_accident_data(year='2020')
+    load_accident_data(year='2021')
+    load_accident_data(year='2022') 
 
 
 if __name__ == "__main__":
