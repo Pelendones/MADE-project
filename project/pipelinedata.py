@@ -1,7 +1,7 @@
 import pandas as pd 
 
 # Daten aus csv Quelle einlesen
-df = pd.read_table('https://raw.githubusercontent.com/Pelendones/MADE-project/main/data/produkt_rr_stunde_19970707_20221231_03379.txt', sep=';')
+df = pd.read_table('https://raw.githubusercontent.com/Pelendones/MADE-project/main/rawdata/produkt_rr_stunde_19970707_20221231_03379.txt', sep=';')
 
 #Nur auf relevante Spalten reduzieren
 df = df[['STATIONS_ID', 'MESS_DATUM', 'QN_8', '  R1']]
