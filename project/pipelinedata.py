@@ -5,8 +5,15 @@ import zipfile
 
 def load_weather_data():
     # Erster Datenquelle für die Wetterdaten
-    df = pd.read_table('https://raw.githubusercontent.com/Pelendones/MADE-project/main/rawdata/produkt_rr_stunde_19970707_20221231_03379.txt', sep=';')
-
+    zip_url = 'https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/precipitation/historical/stundenwerte_RR_03379_19970707_20221231_hist.zip'
+    response = requests.get(zip_url)
+    
+    if response.status_code == 200:
+        # Zip öffnen und extrahieren
+         with zipfile.ZipFile(BytesIO(response.content), 'r') as zip_ref: 
+            file_to_read='produkt_rr_stunde_19970707_20221231_03379.txt'
+            with zip_ref.open(file_to_read) as file:
+                df = pd.read_table(file, sep=';')
     # Nur auf relevante Spalten reduzieren
     df = df[['STATIONS_ID', 'MESS_DATUM', 'QN_8', '  R1']]
 
@@ -85,13 +92,13 @@ def load_accident_data(year):
 
 def main(): 
     load_weather_data()
-    load_accident_data(year='2016')
-    load_accident_data(year='2017')
-    load_accident_data(year='2018')
-    load_accident_data(year='2019')
-    load_accident_data(year='2020')
-    load_accident_data(year='2021')
-    load_accident_data(year='2022') 
+    #load_accident_data(year='2016')
+    #load_accident_data(year='2017')
+    #load_accident_data(year='2018')
+    #load_accident_data(year='2019')
+    #load_accident_data(year='2020')
+    #load_accident_data(year='2021')
+    #load_accident_data(year='2022') 
 
 
 if __name__ == "__main__":
