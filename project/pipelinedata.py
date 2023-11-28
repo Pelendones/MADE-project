@@ -18,7 +18,7 @@ def load_weather_data():
     df = df[['STATIONS_ID', 'MESS_DATUM', 'QN_8', '  R1']]
 
     # Festlegen der Datentypen
-    dtypes = {'STATIONS_ID': int, 'MESS_DATUM': int, 'QN_8': int, '  R1': float}
+    dtypes = {'STATIONS_ID': "Int64", 'MESS_DATUM': "Int64", 'QN_8': "Int64", '  R1': float}
     df = df.astype(dtypes)
 
     # Bessere Metanamen für die Tabellen
@@ -37,9 +37,26 @@ def load_accident_data(year):
     zip_url = f'https://www.opengeodata.nrw.de/produkte/transport_verkehr/unfallatlas/Unfallorte{year}_EPSG25832_CSV.zip'
     response = requests.get(zip_url)
 
+    # Festlegen der Datentypen 
+    dtypes_accidents = {
+         'OBJECTID': "Int64",
+         'ULAND': "Int64",
+         'UREGBEZ': "Int64",
+         'UKREIS': "Int64",
+         'UGEMEINDE': "Int64",
+         'UJAHR': "Int64",
+         'UMONAT': "Int64", 
+         'USTUNDE': "Int64",
+         'UWOCHENTAG': "Int64",
+         'UKATEGORIE': "Int64",
+         'UART': "Int64",
+         'UTYP1': "Int64", 
+         'IstRad': "Int64", 
+     }
+
     # Wenn Anfrage erfolgreich
     if response.status_code == 200:
-        # Zip öffnen und extrahieren
+        # Zip öffnen und extrahieren 
          with zipfile.ZipFile(BytesIO(response.content), 'r') as zip_ref:
             # Kleine Abweichungen bei den zips ausgleichen
             file_to_read = f'csv/Unfallorte{year}_LinRef.txt'
@@ -57,7 +74,7 @@ def load_accident_data(year):
                 file_to_read = f'Unfallorte{year}_LinRef.csv' 
 
             with zip_ref.open(file_to_read) as file:
-                df_zip = pd.read_table(file, sep=';')
+                df_zip = pd.read_table(file, sep=';', dtype=dtypes_accidents)
 
             # Weitere Abweichugen vereinheitlichen
             if year == '2018':
@@ -67,23 +84,8 @@ def load_accident_data(year):
             # Nur auf relevante Spalten reduzieren
             df_zip = df_zip[['OBJECTID', 'ULAND', 'UREGBEZ', 'UKREIS', 'UGEMEINDE', 'UJAHR', 'UMONAT', 'USTUNDE', 'UWOCHENTAG', 'UKATEGORIE', 'UART', 'UTYP1', 'IstRad']]
 
-            # Festlegen der Datentypen
-            dtypes_accidents = {
-                'OBJECTID': int,
-                'ULAND': str,
-                'UREGBEZ': int,
-                'UKREIS': int,
-                'UGEMEINDE': int,
-                'UJAHR': int,
-                'UMONAT': int, 
-                'USTUNDE': int,
-                'UWOCHENTAG': int,
-                'UKATEGORIE': int,
-                'UART': int,
-                'UTYP1': int, 
-                'IstRad': int, 
-                }
-            df_zip = df_zip.astype(dtypes_accidents)
+            
+            #df_zip = df_zip.astype(dtypes_accidents)
 
             # Schreiben in eine sqlite Datei mit dem Namen crashes.sqlite
             df_zip.to_sql('crashes', f'sqlite:///MADE-project/data/crashes{year}.sqlite', if_exists='replace', index=False)
