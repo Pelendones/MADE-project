@@ -24,13 +24,15 @@ def test_load_weather():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()
 
     assert_frame_equal(data_expected,result)
     os.remove(datadirectory)
 
 def test_load_crashes_2016():
     year = '2016'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -38,13 +40,15 @@ def test_load_crashes_2016():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
 
 def test_load_crashes_2017():
     year = '2017'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -52,13 +56,15 @@ def test_load_crashes_2017():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
 
 def test_load_crashes_2018():
     year = '2018'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -66,13 +72,15 @@ def test_load_crashes_2018():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
 
 def test_load_crashes_2019():
     year = '2019'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -80,13 +88,15 @@ def test_load_crashes_2019():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
 
 def test_load_crashes_2020():
     year = '2020'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -94,13 +104,15 @@ def test_load_crashes_2020():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
 
 def test_load_crashes_2021():
     year = '2021'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -108,13 +120,15 @@ def test_load_crashes_2021():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
 
 def test_load_crashes_2022():
     year = '2022'
-    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}.sqlite') 
+    crashdirectory = os.path.join(os.getcwd(),'data',f'{db_name_test}{year}.sqlite') 
     data_expected = load_accident_data(db_name_test,year) 
     try:
         connection = sqlite3.connect(crashdirectory)
@@ -122,6 +136,8 @@ def test_load_crashes_2022():
     except sqlite3.Error as e:
         logging.error(msg=f"Error while creating SQLite DB: {e}")
         sys.exit(1)
+    finally:
+        connection.close()    
 
     assert_frame_equal(data_expected,result)
     os.remove(crashdirectory)
