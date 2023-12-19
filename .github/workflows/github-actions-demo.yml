@@ -16,3 +16,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      # Try testing
+      - name: Run Tests
+        run: |
+          chmod +x tests.sh
+          ./tests.sh
