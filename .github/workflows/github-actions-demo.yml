@@ -19,6 +19,7 @@ jobs:
 
       # Try testing
       - name: Run Tests
-        run: |
+        run: | 
+          ls ${{ github.workspace }}/project
           chmod +x tests.sh
           ./tests.sh
