@@ -1,6 +1,11 @@
 name: GitHub Actions testing the workflow
 run-name: ${{ github.actor }} is testing the workflow
-on: [push]
+
+on:
+  push:
+    branches:
+      - main 
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
