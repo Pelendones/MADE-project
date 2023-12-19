@@ -22,4 +22,4 @@ jobs:
         run: | 
           ls ${{ github.workspace }}/project
           chmod +x ${{ github.workspace }}/project/tests.sh
-          ./${{ github.workspace }}/project/tests.sh
+          .${{ github.workspace }}/project/tests.sh
