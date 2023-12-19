@@ -7,9 +7,13 @@ jobs:
     steps:
       - run: echo "The job was triggered by a ${{ github.event_name }} event." 
 
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} 
+      #Checkout the branch
+      - name: Checkout
+        uses: actions/checkout@v3 
+        
+      #- name: List files in the repository
+      #  run: |
+      #    ls ${{ github.workspace }} 
       
       # Build Stage 
       - name: npm install
