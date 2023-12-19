@@ -14,7 +14,7 @@ jobs:
       # Activate the virtual enviroment    
       - name: Activate virtualenv
         run: | 
-          .venv/Scripts/activate      
+          .${{ github.workspace }}/venv/Scripts/activate      
       
       # Build Stage 
       #- name: npm install
