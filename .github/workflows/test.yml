@@ -10,11 +10,16 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} 
+
+      # Activate the virtual enviroment    
+      - name: Activate virtualenv
+        run: |
+          . .venv/Scripts/activate      
       
       # Build Stage 
-      - name: npm install, build, and test
-        run: |
-            npm install 
+      #- name: npm install
+      #  run: |
+      #      npm install 
 
       # Test Stage
       - name: Run Tests
