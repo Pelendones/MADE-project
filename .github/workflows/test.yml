@@ -16,7 +16,7 @@ jobs:
       #    ls ${{ github.workspace }} 
       
       # Build Stage 
-      - name: npm install
+      - name: pip install requirements
         run: |
             pip install -r requirements.txt 
 
