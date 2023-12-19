@@ -23,4 +23,5 @@ jobs:
       # Test Stage
       - name: Run Tests
         run: | 
-         ./project/tests.sh
+          chmod +x ./project/tests.sh
+          ./project/tests.sh
