@@ -21,5 +21,5 @@ jobs:
       - name: Run Tests
         run: | 
           ls ${{ github.workspace }}/project
-          chmod +x tests.sh
-          ./tests.sh
+          chmod +x ${{ github.workspace }}/project/tests.sh
+          ./${{ github.workspace }}/project/tests.sh
