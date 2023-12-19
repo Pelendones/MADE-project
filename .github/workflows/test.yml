@@ -5,11 +5,12 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The job was automatically triggered by a ${{ github.event_name }} event." 
+      - run: echo "The job was triggered by a ${{ github.event_name }} event." 
 
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} 
+      - run: echo "🍏 This job's status is ${{ job.status }}."  
 
       # Activate the virtual enviroment    
       - name: Activate virtualenv
