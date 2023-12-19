@@ -13,8 +13,8 @@ jobs:
 
       # Activate the virtual enviroment    
       - name: Activate virtualenv
-        run: |
-          . .venv/Scripts/activate      
+        run: | 
+          .venv/Scripts/activate      
       
       # Build Stage 
       #- name: npm install
