@@ -10,17 +10,11 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} 
-      - run: echo "🍏 This job's status is ${{ job.status }}."  
-
-      # Activate the virtual enviroment    
-      - name: Activate virtualenv
-        run: | 
-          .${{ github.workspace }}/venv/Scripts/activate      
       
       # Build Stage 
-      #- name: npm install
-      #  run: |
-      #      npm install 
+      - name: npm install
+        run: |
+            pip install -r requirements.txt 
 
       # Test Stage
       - name: Run Tests
