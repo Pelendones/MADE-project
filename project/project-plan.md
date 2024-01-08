@@ -7,7 +7,7 @@ MADE Project correlation between weather and bicycle accidents.
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. Does the weather influence the severity and frequency of bicycle accidents?
+1. Does rainy weather influence the frequency of bicycle accidents?
 
 ## Description
 

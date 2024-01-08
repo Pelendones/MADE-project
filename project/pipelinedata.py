@@ -1,7 +1,17 @@
 import pandas as pd
 from io import BytesIO
 import requests
-import zipfile 
+import zipfile
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+# Spezifizieren des Landes und den Regierungsbezirks
+land=9
+regbez=7
+
+# Spezifizieren des Ortes der Wetterdaten
+weatherstation='Muenchen-Stadt'
 
 def load_weather_data(db_name):
     # Erster Datenquelle für die Wetterdaten
@@ -31,10 +41,10 @@ def load_weather_data(db_name):
 
     # Bessere Metanamen für die Tabellen
     column_mapping = {'  R1': 'RAINFALL'}
-    df = df.rename(columns=column_mapping)
+    df = df.rename(columns=column_mapping) 
 
-    # Muenchen Stadt als Ort eintragen
-    df['LOCATION'] = 'Muenchen-Stadt'
+    # weatherstation als Ort eintragen
+    df['LOCATION'] = weatherstation
 
     # MESS_DATUM ist nichtmehr benötigt
     df = df.drop('MESS_DATUM', axis=1)
@@ -44,7 +54,8 @@ def load_weather_data(db_name):
 
     # Schreiben in eine sqlite Datei rainweather.sqlite
     df.to_sql('rainweather', f'sqlite:///data/{db_name}.sqlite', if_exists='replace', index=False)
-    print('Done loading the weather database')
+    print('Done loading the weather database') 
+
     return df
 
 def load_accident_data(db_name,year):
@@ -97,10 +108,7 @@ def load_accident_data(db_name,year):
                 df_zip = df_zip.rename(columns=column_mapping)     
 
             # Nur auf relevante Spalten reduzieren
-            df_zip = df_zip[['OBJECTID', 'ULAND', 'UREGBEZ', 'UKREIS', 'UGEMEINDE', 'UJAHR', 'UMONAT', 'USTUNDE', 'UWOCHENTAG', 'UKATEGORIE', 'UART', 'UTYP1', 'IstRad']]
-
-            
-            #df_zip = df_zip.astype(dtypes_accidents)
+            df_zip = df_zip[['OBJECTID', 'ULAND', 'UREGBEZ', 'UKREIS', 'UGEMEINDE', 'UJAHR', 'UMONAT', 'USTUNDE', 'UWOCHENTAG', 'UKATEGORIE', 'UART', 'UTYP1', 'IstRad']] 
 
             # Schreiben in eine sqlite Datei mit dem Namen crashes.sqlite
             df_zip.to_sql('crashes', f'sqlite:///data/{db_name}{year}.sqlite', if_exists='replace', index=False)
@@ -110,7 +118,7 @@ def load_accident_data(db_name,year):
 
 def main():
     db_name_accident = 'crashes' 
-    load_weather_data('rainweather')
+    load_weather_data('rainweather') 
     load_accident_data(db_name_accident,year='2016')
     load_accident_data(db_name_accident,year='2017')
     load_accident_data(db_name_accident,year='2018')
