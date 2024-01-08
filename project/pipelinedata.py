@@ -13,20 +13,34 @@ def load_weather_data(db_name):
          with zipfile.ZipFile(BytesIO(response.content), 'r') as zip_ref: 
             file_to_read='produkt_rr_stunde_19970707_20221231_03379.txt'
             with zip_ref.open(file_to_read) as file:
-                df = pd.read_table(file, sep=';')
+                df = pd.read_table(file, sep=';') 
+
+                
     # Nur auf relevante Spalten reduzieren
-    df = df[['STATIONS_ID', 'MESS_DATUM', 'QN_8', '  R1']]
+    df = df[['STATIONS_ID', 'MESS_DATUM', '  R1']]
 
     # Festlegen der Datentypen
-    dtypes = {'STATIONS_ID': "int64", 'MESS_DATUM': "int64", 'QN_8': "int64", '  R1': float}
+    dtypes = {'STATIONS_ID': "int64", 'MESS_DATUM': "int64", '  R1': float}
     df = df.astype(dtypes)
 
+    # Das aufgespaltene MESS_DATUM transformieren und abspeichern
+    df['YEAR'] = df['MESS_DATUM'] // 1000000
+    df['MONTH'] = (df['MESS_DATUM'] // 10000) % 100
+    df['DAY'] = (df['MESS_DATUM'] // 100) % 100
+    df['HOUR'] = df['MESS_DATUM'] % 100
+
     # Bessere Metanamen für die Tabellen
-    column_mapping = {'QN_8': 'QUALITY', '  R1': 'RAINFALL'}
+    column_mapping = {'  R1': 'RAINFALL'}
     df = df.rename(columns=column_mapping)
 
     # Muenchen Stadt als Ort eintragen
-    df['Location'] = 'Muenchen-Stadt'
+    df['LOCATION'] = 'Muenchen-Stadt'
+
+    # MESS_DATUM ist nichtmehr benötigt
+    df = df.drop('MESS_DATUM', axis=1)
+
+    # Entferne Zeilen mit negativen Niederschlagswerten
+    df = df[df['RAINFALL'] >= 0]
 
     # Schreiben in eine sqlite Datei rainweather.sqlite
     df.to_sql('rainweather', f'sqlite:///data/{db_name}.sqlite', if_exists='replace', index=False)
