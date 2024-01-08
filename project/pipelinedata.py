@@ -50,7 +50,7 @@ def load_weather_data(db_name):
     df = df.drop('MESS_DATUM', axis=1)
 
     # Entferne Zeilen mit negativen Niederschlagswerten
-    df = df[df['RAINFALL'] >= 0]
+    #df = df[df['RAINFALL'] >= 0]
 
     # Schreiben in eine sqlite Datei rainweather.sqlite
     df.to_sql('rainweather', f'sqlite:///data/{db_name}.sqlite', if_exists='replace', index=False)
