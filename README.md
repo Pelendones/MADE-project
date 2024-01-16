@@ -65,3 +65,6 @@ chmod +x tests.sh
 sh tests.sh
 ```
 7. The `project/data-exploration.ipynb` is a project notebook where you can view the contents of the databases and modify it for your own project. In the `project/reports.pdf` you can read the detailed report of the data exploration.
+
+## Rest of the folders and files inside the project
+The rest of the files inside the `examples` and `exercises` folder were used for the class course for additional work and examples of older projects. These are not needed to build the project and can be optionally ignored or deleted
