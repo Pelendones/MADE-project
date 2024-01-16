@@ -17,20 +17,21 @@ The creation of this repository is aligned with the curriculum of the [AMSE](htt
 ## Project Structure
 The important files to run the project are listed below. 
 ```bash
-data/                       # Data directory 
-└──                         # The databases will be stored here after the ETL process and Test pipeline
+data/                         # Data directory 
+└──                          # The databases will be stored here after the ETL process and Test pipeline
 project/ 
-├── tests/                      # Test directory
+├── tests/                    # Test directory
 │   ├── __init__.py 
-│   └── test_pipeline.py        # Test cases for checking the databases after the ETL process
-├── data-exploration.ipynb      # !Important file: A Notebook used to explore the downloaded databases in the data folder
-├── pipeline.sh                 # !Important file: The script that runs the ETL and main file of the project 
-├── pipelinedata.py             # Main file and entry point of the project 
-├── project-plan.md             # The plan and goals for the project
-├── report.pdf                  # !Important file: A pdf that contains the report of the project
-└── tests.sh                    # !Important file: Script for running all test cases
-requirements.txt                # All needed packages needed to build the project
-README.md                       # The document you are reading now. 
+│   └── test_pipeline.py     # Test cases for checking the databases after the ETL process
+├── data-exploration.ipynb    # !Important file: A Notebook used to explore the downloaded databases in the data folder
+├── pipeline.sh               # !Important file: The script that runs the ETL and main file of the project 
+├── pipelinedata.py           # Main file and entry point of the project 
+├── project-plan.md           # The plan and goals for the project
+├── report.pdf                # !Important file: A pdf that contains the report of the project
+└── tests.sh                  # !Important file: Script for running all test cases
+requirements.txt              # All needed packages needed to build the project
+README.md                     # The document you are reading now. 
+
 ```
 
 ## Correctly install and run/modify the project
