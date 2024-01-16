@@ -18,11 +18,11 @@ The creation of this repository is aligned with the curriculum of the [AMSE](htt
 The important files to run the project are listed below. 
 ```bash
 data/                         # Data directory 
-└──                          # The databases will be stored here after the ETL process and Test pipeline
+└──                           # The databases will be stored here after the ETL process and Test pipeline
 project/ 
 ├── tests/                    # Test directory
 │   ├── __init__.py 
-│   └── test_pipeline.py     # Test cases for checking the databases after the ETL process
+│   └── test_pipeline.py      # Test cases for checking the databases after the ETL process
 ├── data-exploration.ipynb    # !Important file: A Notebook used to explore the downloaded databases in the data folder
 ├── pipeline.sh               # !Important file: The script that runs the ETL and main file of the project 
 ├── pipelinedata.py           # Main file and entry point of the project 
