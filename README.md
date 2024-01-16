@@ -17,9 +17,8 @@ The creation of this repository is aligned with the curriculum of the [AMSE](htt
 ## Project Structure
 The important files to run the project are listed below.
 ```bash
-data/
-├── data/                       # Data directory
-│   └──                         # The databases will be stored here after the ETL process and Test pipeline
+data/                       # Data directory 
+└──                         # The databases will be stored here after the ETL process and Test pipeline
 project/ 
 ├── tests/                      # Test directory
 │   ├── __init__.py 
