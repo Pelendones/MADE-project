@@ -1,7 +1,7 @@
 
-## Made Project Bycicle crashes with correlation to rainy weather
+## Made Project bicycle crashes with correlation to rainy weather
 [![Bicycle Picture](https://images.unsplash.com/uploads/14122621859313b34d52b/37e28531?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)](https://unsplash.com/de/fotos/schwarzes-mountainbike-in-der-nahe-der-strasse-geparkt-AoSAOV2Vtro)
-This project tries to see if there is a correlation between rainy weather and bycicle crashes and if it is a stronger correlation than all accidents in the same area. For more information and sources you can visit the `project/project-plan.md` file.
+This project tries to see if there is a correlation between rainy weather and bicycle crashes and if it is a stronger correlation than all accidents in the same area. For more information and sources you can visit the `project/project-plan.md` file.
 
 ## Repository Information
 This repository is a fork of the [2023-amse-template repository](https://github.com/jvalue/2023-amse-template).  
