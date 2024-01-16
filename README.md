@@ -15,7 +15,7 @@ It was established for the purpose of engaging in data engineering and data scie
 The creation of this repository is aligned with the curriculum of the [AMSE](https://oss.cs.fau.de/teaching/specific/amse/) course offered during the Summer semester in 2023 by the [FAU Chair for Open-Source Software](https://oss.cs.fau.de/).
 
 ## Project Structure
-The important files to run the project are listed below.
+The important files to run the project are listed below. 
 ```bash
 data/                       # Data directory 
 └──                         # The databases will be stored here after the ETL process and Test pipeline
