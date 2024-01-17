@@ -13,7 +13,7 @@ Presentation: [presentation-video.md](./project/presentation-video.md)
 ## Repository Information
 This repository is a fork of the [2023-amse-template repository](https://github.com/jvalue/2023-amse-template).  
 It was established for the purpose of engaging in data engineering and data science projects and exercises, utilizing open data sources.  
-The creation of this repository is aligned with the curriculum of the [AMSE](https://oss.cs.fau.de/teaching/specific/amse/) course offered during the Winter semester in 2023 by the [FAU Chair for Open-Source Software](https://oss.cs.fau.de/).
+The creation of this repository is aligned with the curriculum of the [AMSE](https://oss.cs.fau.de/teaching/specific/amse/) course offered during the Winter semester in 2023/24 by the [FAU Chair for Open-Source Software](https://oss.cs.fau.de/).
 
 ## Project Structure
 The important files to run the project are listed below. 
