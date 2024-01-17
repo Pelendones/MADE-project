@@ -6,7 +6,7 @@ This project tries to see if there is a correlation between rainy weather and bi
 
 Furthermore a presentation for this project can be found in the project folder.  
 Slides: [slides.pdf](./project/slides.pdf)  
-Presentation: [presentation-video.mp4](./project/presentation-video.mp4)
+Presentation: [presentation-video.md](./project/presentation-video.md)
 
 
 ## Repository Information
