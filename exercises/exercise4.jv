@@ -33,7 +33,7 @@ pipeline AndroidbatteryPipeline {
     block BatterieTableInterpreter oftype TableInterpreter { 
         header: true;
         columns: [
-        "Geraet" oftype ValidGeraetNumber,
+        "Geraet" oftype text,
         "Hersteller" oftype text, 
         "Model" oftype text, 
         "Monat" oftype integer, 
@@ -60,7 +60,7 @@ pipeline AndroidbatteryPipeline {
         outputColumn: 'Batterietemperatur';
         use: CelsiusToFahrenheit;
     } 
-
+/*
     transform StatusToBoolean {
         from statusText oftype text;
         to statusBoolean oftype boolean;
@@ -73,7 +73,7 @@ pipeline AndroidbatteryPipeline {
         outputColumn: 'Geraet aktiv';
         use: StatusToBoolean;
     } 
-
+*/
     constraint ValidGeraetNumberRange on decimal:
         value > 0;
 
@@ -96,7 +96,7 @@ pipeline AndroidbatteryPipeline {
     -> BatterieTableInterpreter
     -> CelsiusToFahrenheitTransformer
     -> CelsiusToFahrenheitBatteryTransformer
-    -> GereatAktivBooleanTransformer
+    //-> GereatAktivBooleanTransformer
     -> BatterieLoader;
 
 } 
