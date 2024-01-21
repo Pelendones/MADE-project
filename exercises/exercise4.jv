@@ -61,6 +61,19 @@ pipeline AndroidbatteryPipeline {
         use: CelsiusToFahrenheit;
     } 
 
+    transform StatusToBoolean {
+        from statusText oftype text;
+        to statusBoolean oftype boolean;
+
+        statusBoolean: statusText == "Ja"; 
+    }
+
+    block GereatAktivBooleanTransformer oftype TableTransformer {
+        inputColumns: ['Geraet aktiv'];
+        outputColumn: 'Geraet aktiv';
+        use: StatusToBoolean;
+    } 
+
     constraint ValidGeraetNumberRange on decimal:
         value > 0;
 
@@ -83,6 +96,7 @@ pipeline AndroidbatteryPipeline {
     -> BatterieTableInterpreter
     -> CelsiusToFahrenheitTransformer
     -> CelsiusToFahrenheitBatteryTransformer
+    -> GereatAktivBooleanTransformer
     -> BatterieLoader;
 
 } 
