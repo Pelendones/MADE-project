@@ -26,7 +26,7 @@ pipeline AndroidbatteryPipeline {
     }
 
     block RenameTemperaturBatteryCellWriter oftype CellWriter {
-         at: cell M1;
+         at: cell J1;
         write: ["Batterietemperatur"]; 
     }  
 
@@ -75,7 +75,8 @@ pipeline AndroidbatteryPipeline {
     } 
 */
     constraint ValidGeraetNumberRange on decimal:
-        value > 0;
+        value > 0; 
+
 
     valuetype ValidGeraetNumber oftype integer {
         constraints: [ ValidGeraetNumberRange ];
